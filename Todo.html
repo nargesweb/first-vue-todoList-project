@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>To Do list Project</title>
+</head>
+<body>
+    <div id="app">
+        <h2>To Do List</h2>
+        <div class="inputTag">
+            <input type="text" placeholder="enter your work" v-model= "newTodo"/>
+            <i class="uil uil-check" @click="addItem"></i>
+        </div>
+        <ul>
+            <li v-for="( item ,index) in todoList" >
+                <span>{{index + 1}}</span> 
+                <span>{{item}}</span>
+                <i class="uil uil-times" @click="removeItem(index)"></i>
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./todo.js"></script>
+</body>
+</html>
